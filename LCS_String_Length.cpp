@@ -2,7 +2,7 @@
 using namespace std;
 
 vector<vector<int>>dp;
-string s3;
+string s;
 
 int LCS(int i , int j, string s1, string s2){
     if(i == s1.length() || j == s2.length()){
@@ -12,7 +12,7 @@ int LCS(int i , int j, string s1, string s2){
     
     if(s1[i] == s2[j]){
         take =  1 + LCS(i+1, j+1, s1, s2);
-        s3+=s1[i];
+        s+=s1[i];
         return take;
     }
 
@@ -29,9 +29,9 @@ int main() {
 
     cout<<LCS(0, 0, s1, s2)<<endl;
 
-    reverse(s3.begin(), s3.end());
+    reverse(s.begin(), s.end());
 
-    cout<<s3;
+    cout<<s;
 
     return 0;
 }
